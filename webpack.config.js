@@ -14,8 +14,20 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: 'babel-loader',
-            }
+                use: 'babel-loader',                
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: [
+                    { loader: 'style-loader', },
+                    { loader: 'css-loader', },               
+                ]
+            },
+            {
+                test: /.*\.(gif|png|jpe?g)$/i,
+                use: 'file-loader', 
+            }         
         ]
     },
 };
